@@ -1,0 +1,40 @@
+function bitcoinMining(arr) {
+    let priceGold = 0;
+    let bitcoins = 0;
+    let dayCounter = 0;
+    let dayPurches = 0;
+    let bool = true;
+
+    for (let i = 0; i < arr.length; i++) {
+        dayCounter++
+
+        let goldPerDay = arr[i]
+
+        if (dayCounter % 3 === 0) {
+            goldPerDay *= 0.7;
+        }
+        priceGold += goldPerDay * 67.51
+
+        if (priceGold >= 11949.16 && bool === true) {
+            dayPurches = dayCounter;
+            bool = false;
+
+        }
+
+
+
+
+    }
+    bitcoins = Math.floor(priceGold / 11949.16);
+
+    console.log(`Bought bitcoins: ${bitcoins}`)
+
+    if (bitcoins > 0) {
+        console.log(`Day of the first purchased bitcoin: ${dayPurches}`);
+    } else {
+
+    }
+    let diff = Math.abs(priceGold % 11949.16)
+    console.log(`Left money: ${diff.toFixed(2)} lv.`)
+}
+bitcoinMining([50, 100])
