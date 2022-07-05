@@ -1,0 +1,3 @@
+let res = Math.trunc(4320) + ',';
+
+console.log(res);
