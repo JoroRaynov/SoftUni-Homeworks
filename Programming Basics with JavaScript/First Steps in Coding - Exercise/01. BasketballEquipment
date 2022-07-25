@@ -1,0 +1,16 @@
+function basketballEquipment(input) {
+
+    let taxForYear = Number(input[0]);
+
+    let sneakersPrice = taxForYear - (taxForYear * 0.40);
+    let equipmentPrice = sneakersPrice - (sneakersPrice * 0.2)
+    let ballPrice = equipmentPrice / 4;
+    let acc = ballPrice / 5;
+
+    let totalPrice = taxForYear + sneakersPrice + equipmentPrice + ballPrice + acc;
+
+    console.log(totalPrice);
+
+}
+
+basketballEquipment(["365 "]) 
